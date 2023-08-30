@@ -1,0 +1,23 @@
+{
+  "name": "weatherlog",
+  "version": "1.0.0",
+  "description": "Webserver application to log weather readings",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martin-coding/weatherlog.git"
+  },
+  "author": "martin-coding",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martin-coding/weatherlog/issues"
+  },
+  "homepage": "https://github.com/martin-coding/weatherlog#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  }
+}
