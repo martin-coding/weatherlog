@@ -3,57 +3,22 @@ extends layout.pug
 block content
     section#dashboard
         h1 Dashboard
-        .station_row
-            .data_container
-                .data_column
-                    p.data_title Berlin
-                .data_column
-                    p.data_title Weather
-                    p 800
-                .data_column
-                    p.data_title Temperature
-                    p 20.32 °C
-                .data_column
-                    p.data_title Wind
-                    p 0.89 bft
-                .data_column
-                    p.data_title Air pressure
-                    p 1016 hpa
-            div
-                a(href='/stations/1') Details
-        .station_row
-            .data_container
-                .data_column
-                    p.data_title Köln
-                .data_column
-                    p.data_title Weather
-                    p 600
-                .data_column
-                    p.data_title Temperature
-                    p 0.25 °C
-                .data_column
-                    p.data_title Wind
-                    p 0.89 bft
-                .data_column
-                    p.data_title Air pressure
-                    p 1002 hpa
-            div
-                a(href='/stations/2') Details
-        .station_row
-            .data_container
-                .data_column
-                    p.data_title München
-                .data_column
-                    p.data_title Weather
-                    p 500
-                .data_column
-                    p.data_title Temperature
-                    p 17.67 °C
-                .data_column
-                    p.data_title Wind
-                    p 1.02 bft
-                .data_column
-                    p.data_title Air pressure
-                    p 1017 hpa
-            div
-                a(href='/stations/3') Details
+        each station in stations
+            .station_row
+                .data_container
+                    .data_column
+                        p.data_title= station.name
+                    .data_column
+                        p.data_title Weather
+                        p= station.weather
+                    .data_column
+                        p.data_title Temperature
+                        p= station.temperature + " °C"
+                    .data_column
+                        p.data_title Wind
+                        p= station.windspeed + " bft"
+                    .data_column
+                        p.data_title Air pressure
+                        p= station.pressure + " hpa"
+                div
+                    a(href="/stations/"+station.station_id) Details

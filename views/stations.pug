@@ -5,19 +5,19 @@ block content
         .station_row
             .data_container
                 .data_column
-                    p.data_title Berlin
+                    p.data_title= latest_reading.name
                 .data_column
                     p.data_title Weather
-                    p 800
+                    p= latest_reading.weather
                 .data_column
                     p.data_title Temperature
-                    p 20.32 °C
+                    p= latest_reading.temperature + " °C"
                 .data_column
                     p.data_title Wind
-                    p 0.89 bft
+                    p= latest_reading.windspeed + " bft"
                 .data_column
                     p.data_title Air pressure
-                    p 1016 hpa
+                    p= latest_reading.pressure + " hpa"
         div
             table
                 tr
@@ -25,33 +25,9 @@ block content
                     th Temperature
                     th Wind
                     th Air pressure
-                tr
-                    td 800
-                    td 20.32
-                    td 0.89
-                    td 1016
-                tr
-                    td 800
-                    td 20.32
-                    td 0.89
-                    td 1016
-                tr
-                    td 800
-                    td 20.32
-                    td 0.89
-                    td 1016
-                tr
-                    td 800
-                    td 20.32
-                    td 0.89
-                    td 1016
-                tr
-                    td 800
-                    td 20.32
-                    td 0.89
-                    td 1016
-                tr
-                    td 800
-                    td 20.32
-                    td 0.89
-                    td 1016
+                each reading in readings
+                    tr
+                        td= reading.weather
+                        td= reading.temperature
+                        td= reading.windspeed
+                        td= reading.pressure
