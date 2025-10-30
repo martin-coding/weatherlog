@@ -1,0 +1,17 @@
+services:
+  database:
+    container_name: weatherlog_postgres
+    image: postgres
+    environment:
+      POSTGRES_USER: weatherlog
+      POSTGRES_PASSWORD: e298FgVU
+      POSTGRES_DB: weatherlog
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 5432:5432
+    restart: unless-stopped
+
+volumes:
+  pgdata:
