@@ -1,7 +1,22 @@
 extends layout.pug
 
 block content
+    header
+        p Weatherlog
+        a(href='/signup') Sign up
     section
-        .index_column
+        .index_column#image_index_column
             img#index_image(src='img/weathericons.jpeg' alt='Weathericons')
         .index_column
+            form(action='/' method='post')
+                .form_col
+                    .form_box
+                        label Email
+                        input(name='email' type='email' placeholder='Email')
+                    .form_box
+                        label Password
+                        input(name='password' type='password' placeholder='Passwort')
+                button Log in
+            if error
+                .error_box#login_error
+                    p=error

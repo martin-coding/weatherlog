@@ -28,9 +28,19 @@ header a {
     width: 50%;
 }
 
+.index_column form {
+    margin-left: 50px;
+}
+
 #index_image {
     width: 100%;
 }
+
+#login_error {
+    margin-left: 50px;
+}
+
+/* ---- Dashboard --------------- */
 
 #dashboard {
     flex-direction: column;
@@ -45,10 +55,12 @@ header a {
 
 .data_container {
     display: flex;
-    /*gap: 30px;*/
+    flex-wrap: wrap;
 }
 
 .data_column {
+    display: flex;
+    justify-content: space-between;
     width: 200px;
     margin: 15px;
     color: white;
@@ -56,18 +68,57 @@ header a {
     border-radius: 5px;
 }
 
-.data_column p {
-    margin: 20px 0 20px 20px;
-    font-size: 18px;
+.icon {
+    display: flex;
+    flex-direction: column;
+}
+
+.icon svg {
+    margin: 20px 20px 0 0;
+}
+
+#weathericon svg {
+    color: #ABB0B4;
+ }
+#windicon svg {
+    color: #D6A939;
+}
+#pressureicon svg {
+    color: #EEEA4E;
+}
+#tempicon svg {
+    color: #798590;
 }
 
 .data_title {
+    margin: 20px 0 15px 20px;
+    font-size: 18px;
     font-weight: bold;
 }
 
-.station_row a {
-    margin: 15px 0 0 15px;
+.data_content {
+    margin: 0 0 10px 20px;
 }
+
+#firstlink {
+    margin-left: 15px;
+}
+
+#secondlink {
+    margin-left: 10px;
+}
+
+.stationadd_box {
+    width: 32%;
+}
+
+#map {
+    height: 300px;
+    width: 100%;
+    margin: 10px 0 10px 0;
+}
+
+/* ---- Station Detail ---------- */
 
 table {
     width: 100%;
@@ -76,14 +127,134 @@ table {
     font-size: 18px;
 }
 
-th {
-    border-bottom: #222529 solid 2px;
+td, th {
+    padding: 10px 10px 10px 10px;
 }
 
 tr {
     border-bottom: #464749 solid 1px;
 }
 
-td, th {
-    padding: 10px 0 10px 0;
+th {
+    border-bottom: #222529 solid 2px;
+}
+
+.readingadd_box {
+    width: 19%;
+}
+
+#automaticBtn {
+    color: #212529;
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+/* ---- Signup ------------------ */
+
+#signup {
+    width: 50%;
+}
+
+#signup_section {
+    display: block;
+}
+
+#signup_error {
+    width: 50%;
+}
+
+/* ---- Allgemein Forms --------- */
+
+form {
+    margin-top: 30px;
+}
+
+.form_row {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.form_col {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.form_box {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0 10px 0;
+}
+
+form label {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+form input {
+    height: 25px;
+}
+
+form button {
+    height: 31px;
+    color: white;
+    background-color: #337ab7;
+    border: 1px solid #007bff;
+    border-radius: .25rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1rem;
+    padding: 4px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    box-sizing: border-box;
+    -webkit-appearance: button;
+}
+
+/* ---- Allgemeine Messages ----- */
+
+.error_box {
+    margin-top: 20px;
+    color: #691111;
+    background-color: rgba(192, 101, 101, 0.4);
+    border: 1px solid rgba(105, 17, 17, 0.9);
+    border-radius: .25rem;
+}
+
+.error_box p {
+    margin: 16px;
+}
+
+/* ---- Mobile screens ---------- */
+
+@media only screen and (max-width: 750px) {
+    #image_index_column {
+        display: none;
+    }
+    .index_column {
+        width: 100%;
+    }
+    .index_column form {
+        margin-left: 0;
+    }
+    .data_column {
+        width: 100%;
+    }
+    #signup {
+        width: 100%;
+    }
+    .readingadd_box {
+        width: 100%;
+    }
+    .form_row {
+        flex-direction: column;
+    }
+    .stationadd_box {
+        width: 100%;
+    }
 }

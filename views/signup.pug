@@ -1,0 +1,25 @@
+extends layout.pug
+
+block content
+    header
+        p Weatherlog
+        a(href='/') Log in
+    section#signup_section
+        form#signup(action='/signup' method='post')
+            .form_col
+                .form_box.signup_box
+                    label Email
+                    input(name='email' type='email' placeholder='Email')
+                .form_box.signup_box
+                    label Given name
+                    input(name='firstname' type='text' placeholder='Given name')
+                .form_box.signup_box
+                    label Surname
+                    input(name='lastname' type='text' placeholder='Surname')
+                .form_box.signup_box
+                    label Password
+                    input(name='password' type='password' placeholder='Password')
+            button Sign up
+        if error
+            .error_box#signup_error
+                p=error
